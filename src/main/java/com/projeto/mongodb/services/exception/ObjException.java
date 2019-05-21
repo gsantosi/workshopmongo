@@ -6,7 +6,5 @@ public class ObjException extends RuntimeException{
 	public ObjException(String msg) {
 		super(msg);
 	}
-	
-	
-	
+
 }
