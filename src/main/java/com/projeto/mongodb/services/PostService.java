@@ -37,7 +37,7 @@ public class PostService {
 	}
 
 	private void update(Post newup, Post obj) {
-		newup.setUser(obj.getUser());
+		newup.setAutor(obj.getAutor());
 		newup.setTitle(obj.getTitle());
 		newup.setData(obj.getData());
 		newup.setBody(obj.getBody());

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.Date;
 
 import com.projeto.mongodb.domain.Post;
-import com.projeto.mongodb.domain.User;
 
 public class PostDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -13,14 +12,14 @@ public class PostDTO implements Serializable{
 	private Date data;
 	private String title;
 	private String body;
-	private User user;
+	private AutorDTO autor;
 	
 	public PostDTO(Post obj) {
 		this.id = obj.getId();
 		this.data = obj.getData();
 		this.title = obj.getTitle();
 		this.body = obj.getBody();
-		this.user = obj.getUser();
+		this.autor = obj.getAutor();
 	}
 
 	public String getId() {
@@ -55,12 +54,12 @@ public class PostDTO implements Serializable{
 		this.body = body;
 	}
 
-	public User getUser() {
-		return user;
+	public AutorDTO getAutor() {
+		return autor;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setAutor(AutorDTO autor) {
+		this.autor = autor;
 	}
 
 }
