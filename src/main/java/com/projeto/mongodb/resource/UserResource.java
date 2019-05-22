@@ -39,7 +39,7 @@ public class UserResource {
 	}
 
 	@PostMapping(value="/insert")
-	public ResponseEntity<Void> insert(@RequestBody User obj) {
+	public ResponseEntity<Void> insert(@RequestBody User obj) { 
      service.insert(obj);
 	return ResponseEntity.ok().build();
 	}
@@ -51,12 +51,13 @@ public class UserResource {
 		
 	}
 	
-	@PutMapping(value="/update")
-	public ResponseEntity<Void> update(@RequestBody User obj){
+	@PutMapping(value="/update/{id}")
+	public ResponseEntity<Void> update(@RequestBody User obj, @PathVariable String id){
 		service.update(obj);
 		return ResponseEntity.ok().build();
 		
 	}
+	
 	
 	
 	
