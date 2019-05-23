@@ -1,7 +1,6 @@
 package com.projeto.mongodb.resource;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,9 +32,8 @@ public class PostResource {
 	}
 	
 	@GetMapping(value="/{id}")
-	public Optional<Post> findById(@PathVariable String id){
-		service.findById(id);
-		return null;
+	public Post findById(@PathVariable String id){
+		return service.findById(id); 
 	}
 	
 	@PostMapping(value="/insert")
