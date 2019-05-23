@@ -36,10 +36,13 @@ public class Config implements CommandLineRunner {
 		repository.saveAll(Arrays.asList(gui,matheus));
 		
 		Post post1 = new Post(null, sdf.parse("2019/05/22"), "Bom dia", "Acordei determinado hoje", new AutorDTO(gui) );
-		Post post2 = new Post(null, sdf.parse("2011/04/20"), "Boa tarde", "Coffee Break", new AutorDTO(matheus) );
+		Post post2 = new Post(null, sdf.parse("2011/04/20"), "Boa tarde", "Coffee Break", new AutorDTO(gui) );
 		
 		postrepo.saveAll(Arrays.asList(post1, post2));
 		
+		gui.getPost().addAll(Arrays.asList(post1,post2));
+		
+		repository.save(gui);
 		
 	}
 
